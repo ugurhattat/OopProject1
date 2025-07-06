@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace OopProject1.Controllers
 {
-    public class EnemyControllere : MonoBehaviour
+    public class EnemyController : MonoBehaviour
     {
         [SerializeField] float maxLifeTime = 5f;
 
