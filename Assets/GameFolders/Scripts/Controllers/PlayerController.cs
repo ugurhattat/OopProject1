@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using OopProject1.Movements;
 using UnityEngine;
 
 namespace OopProject1.Controllers
@@ -8,19 +9,21 @@ namespace OopProject1.Controllers
     
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float jumpForce = 500f;
-        //field private bir field'dir.
         Rigidbody2D _rigidbody2D;
-        bool _isLeftMouseClicked; //snake case _isLeftMouseClicked
+        Jump _jump;
+        PcInputController _input;
+        bool _isLeftMouseClicked;
 
         private void Awake()
         {
            _rigidbody2D = GetComponent<Rigidbody2D>();
+            _jump = GetComponent<Jump>();
+            _input = new PcInputController();
         }
 
         private void Update()
         {
-            if (Input.GetMouseButton(0)) 
+            if (_input.LeftMouseClickDown) 
             {
                 _isLeftMouseClicked = true;
             }
@@ -30,8 +33,8 @@ namespace OopProject1.Controllers
         {
             if (_isLeftMouseClicked)
             {
-                _rigidbody2D.velocity = Vector2.zero;
-                _rigidbody2D.AddForce(Vector2.up * jumpForce);
+                _jump.JumpAction(_rigidbody2D);
+
                 _isLeftMouseClicked= false;
             }
         }
