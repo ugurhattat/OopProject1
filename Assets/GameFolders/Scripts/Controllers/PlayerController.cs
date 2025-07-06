@@ -11,6 +11,7 @@ namespace OopProject1.Controllers
         [SerializeField] float jumpForce = 500f;
         //field private bir field'dir.
         Rigidbody2D _rigidbody2D;
+        bool _isLeftMouseClicked; //snake case _isLeftMouseClicked
 
         private void Awake()
         {
@@ -19,9 +20,19 @@ namespace OopProject1.Controllers
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0)) 
             {
+                _isLeftMouseClicked = true;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            if (_isLeftMouseClicked)
+            {
+                _rigidbody2D.velocity = Vector2.zero;
                 _rigidbody2D.AddForce(Vector2.up * jumpForce);
+                _isLeftMouseClicked= false;
             }
         }
 
