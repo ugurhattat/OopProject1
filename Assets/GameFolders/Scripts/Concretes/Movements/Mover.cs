@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using OopProject1.Enums;
 using UnityEngine;
+using static UnityEditorInternal.VersionControl.ListControl;
 
 namespace OopProject1.Movements
 {
@@ -8,6 +10,7 @@ namespace OopProject1.Movements
     public class Mover : MonoBehaviour
     {
         [SerializeField] float moveSpeed = 5f;
+        [SerializeField] DirectionEnum direction;
         Rigidbody2D _rigidbody2D;
 
         private void Awake()
@@ -17,7 +20,26 @@ namespace OopProject1.Movements
 
         private void Start()
         {
-            _rigidbody2D.velocity = Vector2.left * moveSpeed;
+            Vector2 selectedDirection;
+
+            
+                _rigidbody2D.velocity = SelectNewDirection() * moveSpeed;
+        }
+
+        private Vector2 SelectNewDirection()
+        {
+            Vector2 selectedDirection;
+
+            if (direction == DirectionEnum.Left)
+            {
+                selectedDirection = Vector2.left;
+            }
+            else
+            {
+                selectedDirection = Vector2.right;
+            }
+
+            return selectedDirection;
         }
     }
 }
