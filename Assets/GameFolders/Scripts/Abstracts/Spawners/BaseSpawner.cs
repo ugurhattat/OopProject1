@@ -1,20 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using OopProject1.Controllers;
-using OopProject1.Movements;
 using UnityEngine;
 
-namespace OopProject1.Spawners
+namespace OopProject1.Abstracts.Spawners
 {
-    public class ObstacleSpawner : MonoBehaviour
+    public abstract class BaseSpawner : MonoBehaviour
     {
-        [Range(2f,5f)]
+        [Range(2f, 5f)]
         [SerializeField] float maxSpawnTime = 3f;
-        [Range(0.3f,1.5f)]
+        [Range(0.3f, 1.5f)]
         [SerializeField] float minSpawnTime = 1f;
-
-        //dizi array
-        [SerializeField] EnemyController[] enemies;
 
         float _currentSpawnTime;
         float _timeBoundary;
@@ -34,12 +29,7 @@ namespace OopProject1.Spawners
             }
         }
 
-        private void Spawn()
-        {
-            //Range method 0'da kapsar ama altina gidemez ama 4 gelemez
-            int enemyIndex = Random.Range(0, 4);
-            Instantiate(enemies[enemyIndex], this.transform);
-        }
+        protected abstract void Spawn();
 
         private void ResetTimes()
         {
@@ -48,5 +38,4 @@ namespace OopProject1.Spawners
         }
     }
 }
-
 
