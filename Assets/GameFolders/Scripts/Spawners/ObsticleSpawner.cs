@@ -13,14 +13,15 @@ namespace OopProject1.Spawners
         [Range(0.3f,1.5f)]
         [SerializeField] float minSpawnTime = 1f;
 
-        [SerializeField] EnemyController enemy;
+        //dizi array
+        [SerializeField] EnemyController[] enemies;
 
         float _currentSpawnTime;
         float _timeBoundary;
 
-        private void Awake()
+        private void Start()
         {
-            _timeBoundary = Random.Range(minSpawnTime, maxSpawnTime);
+            ResetTimes();
         }
         private void Update()
         {
@@ -29,13 +30,21 @@ namespace OopProject1.Spawners
             if (_currentSpawnTime > _timeBoundary)
             {
                 Spawn();
-                _currentSpawnTime = 0f;
+                ResetTimes();
             }
         }
 
         private void Spawn()
         {
-            Instantiate(enemy, transform.position, transform.rotation);
+            //Range method 0'da kapsar ama altina gidemez ama 4 gelemez
+            int enemyIndex = Random.Range(0, 4);
+            Instantiate(enemies[enemyIndex], this.transform);
+        }
+
+        private void ResetTimes()
+        {
+            _currentSpawnTime = 0f;
+            _timeBoundary = Random.Range(minSpawnTime, maxSpawnTime);
         }
     }
 }

@@ -148,9 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337b8c03a3dc33a47bc474e313ba3b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpawnTime: 3
-  minSpawnTime: 1
-  enemy: {fileID: 8375922545446922746, guid: 63c2eb96be1ba034e8c6c221a8b7ac23, type: 3}
+  maxSpawnTime: 2.5
+  minSpawnTime: 0.807
+  enemies:
+  - {fileID: 8375922545446922746, guid: 63c2eb96be1ba034e8c6c221a8b7ac23, type: 3}
+  - {fileID: 6902342376303565592, guid: 70b7f7b49c4f4dd4f9c92f552010f48d, type: 3}
+  - {fileID: 2347620166838894765, guid: bdec110874ebbeb48a0be5b062a6f036, type: 3}
+  - {fileID: 4159098282189382576, guid: 67d6ccbc000b5174dacc6ec958b5a4f8, type: 3}
 --- !u!4 &512788911
 Transform:
   m_ObjectHideFlags: 0
