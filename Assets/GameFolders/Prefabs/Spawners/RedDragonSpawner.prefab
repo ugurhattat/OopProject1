@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7844012452301427822}
-  - component: {fileID: 7291523120694544106}
+  - component: {fileID: -7439635978975042527}
   m_Layer: 0
   m_Name: RedDragonSpawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7291523120694544106
+--- !u!114 &-7439635978975042527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17ad979bc0190a48b912f5b448750b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpawnTime: 4.19
-  minSpawnTime: 1.123
-  enemy: {fileID: 6788743905881165750, guid: c069538b5f645d943b1d75a11c980880, type: 3}
+  maxSpawnTime: 4.49
+  minSpawnTime: 1.411
+  enemy: {fileID: 3297840226044646801, guid: c069538b5f645d943b1d75a11c980880, type: 3}

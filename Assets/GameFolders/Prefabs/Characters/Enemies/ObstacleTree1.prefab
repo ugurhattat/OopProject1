@@ -96,7 +96,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1436638799615442285, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
       propertyPath: m_Name
-      value: ObsticleTree1
+      value: ObstacleTree1
       objectReference: {fileID: 0}
     - target: {fileID: 1833156161457675554, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
       propertyPath: m_Size.x
@@ -164,10 +164,31 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7257829051580189998, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1302559958418725551}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1436638799615442285, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5928424398879390632}
   m_SourcePrefab: {fileID: 100100000, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
 --- !u!4 &1678486849058004323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7257829051580189998, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
   m_PrefabInstance: {fileID: 8355254782750281805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6925450547682733344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1436638799615442285, guid: daed27fdb71ca1141ab7a58bd2bcc8f1, type: 3}
+  m_PrefabInstance: {fileID: 8355254782750281805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5928424398879390632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925450547682733344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8a5b83587b9434fb0fc3f0e0b7ed1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifeTime: 5
