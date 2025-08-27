@@ -7,9 +7,16 @@ namespace OopProject1.Controllers
 {
     public class ProjectileController : LifeCycleController
     {
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("Collision Enter 2d triggered");
+            EnemyController enemy = collision.GetComponent<EnemyController>();
+
+            if (enemy != null) 
+            {
+                GameManager.Instance.IncreaseScore();
+                Destroy(enemy.gameObject);
+                Destroy(this.gameObject);
+            }
         }
     }
 
