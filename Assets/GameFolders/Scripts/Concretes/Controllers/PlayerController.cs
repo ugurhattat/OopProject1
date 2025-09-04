@@ -14,6 +14,7 @@ namespace OopProject1.Controllers
         Jump _jump;
         PcInputController _input;
         LaunchProjectile _launchProjectile;
+        AudioSource _audioSource;
         bool _isLeftMouseClicked;
 
         private void Awake()
@@ -21,6 +22,7 @@ namespace OopProject1.Controllers
            _rigidbody2D = GetComponent<Rigidbody2D>();
             _jump = GetComponent<Jump>();
             _launchProjectile = GetComponent<LaunchProjectile>();
+            _audioSource = GetComponent<AudioSource>();
             _input = new PcInputController();
         }
 
@@ -42,7 +44,7 @@ namespace OopProject1.Controllers
             if (_isLeftMouseClicked)
             {
                 _jump.JumpAction(_rigidbody2D);
-
+                _audioSource.Play();
                 _isLeftMouseClicked= false;
             }
         }
