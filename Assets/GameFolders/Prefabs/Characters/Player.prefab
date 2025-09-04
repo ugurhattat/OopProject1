@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 4225509632320316835}
   - component: {fileID: 956448430131400781}
   - component: {fileID: 6258611982100509930}
+  - component: {fileID: 26551712730412791}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -228,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc886e1f354c37b40a6fad44bfd8de5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 350
+  jumpForce: 220
 --- !u!114 &6258611982100509930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +244,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8922101713479830013, guid: 2e7129b4028fbf14d9e9e6e06ba72293, type: 3}
   projectileTransform: {fileID: 3228418826544825581}
-  delayProjectile: 1
+  projectileParent: {fileID: 0}
+  delayProjectile: 0.5
+--- !u!114 &26551712730412791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231588488027337473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ca632dedacdfd489dbedcfe9d0a658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDead: 0
 --- !u!1 &5145979228070258394
 GameObject:
   m_ObjectHideFlags: 0

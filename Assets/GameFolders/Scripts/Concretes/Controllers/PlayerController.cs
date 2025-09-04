@@ -46,11 +46,6 @@ namespace OopProject1.Controllers
                 _isLeftMouseClicked= false;
             }
         }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            GameManager.Instance.RestartGame();
-        }
     }
 }
 
