@@ -8,12 +8,12 @@ namespace OopProject1.Uis
     {
    public void YesButtonClick()
         {
-            GameManager.Instance.RestartGame();
+            GameManager.Instance.StartGame();
         }
 
         public void NoButtonClick()
         {
-            Debug.Log("No Button Clicked");
+            GameManager.Instance.ReturnMenu();
         }
     }
 }
