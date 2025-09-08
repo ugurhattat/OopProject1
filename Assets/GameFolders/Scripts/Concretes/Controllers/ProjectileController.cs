@@ -15,9 +15,13 @@ namespace OopProject1.Controllers
             {
                 GameManager.Instance.IncreaseScore();
                 Destroy(enemy.gameObject);
-                Destroy(this.gameObject);
+                KillGameObject();
             }
         }
-    }
 
+        public override void KillGameObject()
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

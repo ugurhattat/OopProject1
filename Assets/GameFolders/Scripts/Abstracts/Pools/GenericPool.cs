@@ -38,6 +38,7 @@ namespace OopProject1.Abstracts.Pools
             for (int i = 0; i < countLoop; i++)
             {
                 T newPrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)]);
+                newPrefab.transform.parent = this.transform;
                 newPrefab.gameObject.SetActive(false);
                 _poolPrefabs.Enqueue(newPrefab);
             }

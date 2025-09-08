@@ -17,7 +17,7 @@ namespace OopProject1.Uis
         private void Start()
         {
             Dead dead = FindObjectOfType<Dead>();
-            dead.OnDead += HandleOnDead;
+            //dead.OnDead += HandleOnDead;
         }
 
         private void HandleOnDead()

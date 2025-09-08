@@ -18,11 +18,8 @@ namespace OopProject1.Movements
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            Vector2 selectedDirection;
-
-            
                 _rigidbody2D.velocity = SelectNewDirection() * moveSpeed;
         }
 
