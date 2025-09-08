@@ -12,7 +12,7 @@ namespace OopProject1.Spawners
     {
         protected override void Spawn()
         {
-            EnemyController poolEnemy = ObstaclePool.instance.Get();
+            EnemyController poolEnemy = ObstaclePool.Instance.Get();
             poolEnemy.transform.position = this.transform.position;
             poolEnemy.gameObject.SetActive(true);
         }

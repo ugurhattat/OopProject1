@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using OopProject1.Abstracts.Spawners;
 using OopProject1.Controllers;
+using OopProject1.Pools;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -9,11 +10,11 @@ namespace OopProject1.Spawners
 {
     public class RedDragonSpawner : BaseSpawner
     {
-        [SerializeField] private EnemyController enemy;
-
         protected override void Spawn()
         {
-            Instantiate(enemy, this.transform);
+            EnemyController newEnemy = RedDragonPool.Instance.Get();
+            newEnemy.transform.position = transform.position;
+            newEnemy.gameObject.SetActive(true);
         }
     }
 }

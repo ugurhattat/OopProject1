@@ -14,9 +14,10 @@ namespace OopProject1.Controllers
             if (enemy != null) 
             {
                 GameManager.Instance.IncreaseScore();
-                Destroy(enemy.gameObject);
                 KillGameObject();
             }
+
+            enemy.KillGameObject();
         }
 
         public override void KillGameObject()

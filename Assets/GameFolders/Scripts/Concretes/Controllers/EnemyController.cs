@@ -6,12 +6,14 @@ using UnityEngine;
 
 namespace OopProject1.Controllers
 {
-    public class EnemyController : LifeCycleController
+    public abstract class EnemyController : LifeCycleController
     {
         public override void KillGameObject()
         {
             _currentTime = 0f;
-            ObstaclePool.instance.Set(this);
+            SetEnemyPool();
         }
+
+        public abstract void SetEnemyPool();
     }
 }

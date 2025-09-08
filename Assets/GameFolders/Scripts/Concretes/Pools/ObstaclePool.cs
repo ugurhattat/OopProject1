@@ -6,15 +6,15 @@ using UnityEngine;
 
 namespace OopProject1.Pools
 {
-    public class ObstaclePool : GenericPool<EnemyController>
+    public class ObstaclePool : GenericPool<ObstacleController>
     {
-        public static ObstaclePool instance { get; private set; }
+        public static ObstaclePool Instance { get; private set; }
 
         protected override void SingletonObject()
         {
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
+                Instance = this;
                 DontDestroyOnLoad(this.gameObject);
             }
             else
