@@ -1,4 +1,5 @@
 using OopProject1.Controllers;
+using OopProject1.Pools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ namespace OopProject1.Combats
     {
         [SerializeField] ProjectileController projectilePrefab;
         [SerializeField] Transform projectileTransform;
-        [SerializeField] GameObject projectileParent;
         [SerializeField] float delayProjectile = 0.1f;
 
         float _currentDelayTime;
@@ -28,15 +28,34 @@ namespace OopProject1.Combats
 
         public void LaunchAction()
         {
+            if (!_canLaunch) return;
 
-            if (_canLaunch)
+            if (ProjectilePool.Instance == null)
             {
-                ProjectileController newProjectile = Instantiate(projectilePrefab, projectileTransform.position, projectileTransform.transform.rotation);
+                Debug.LogError("[LaunchProjectile] ProjectilePool.Instance NULL! Sahneye 'ProjectilePool' ekle veya ilk sahnede DontDestroyOnLoad ile baslat.");
 
-                newProjectile.transform.parent = projectileParent.transform;
-
-                _canLaunch = false;
+                return;
             }
+
+            var newProjectile = ProjectilePool.Instance.Get();
+
+            if (newProjectile == null)
+            {
+                Debug.LogError("[LaunchProjectile] Pool NULL dondurdu. ProjectilePool icindeki 'Prefabs' dizisine en az 1 prefab ekle");
+
+                return;
+            }
+
+            if (projectileTransform == null)
+            {
+                Debug.LogError("[LaunchProjectile] projectileTransform (FirePoint) atanmamis");
+
+                return;
+            }
+
+                newProjectile.transform.position = projectileTransform.position;
+                newProjectile.gameObject.SetActive(true);
+                _canLaunch = false;
         }
     }
  

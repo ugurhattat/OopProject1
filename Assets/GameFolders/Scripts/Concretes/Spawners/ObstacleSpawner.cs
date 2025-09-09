@@ -12,9 +12,24 @@ namespace OopProject1.Spawners
     {
         protected override void Spawn()
         {
-            EnemyController poolEnemy = ObstaclePool.Instance.Get();
-            poolEnemy.transform.position = this.transform.position;
-            poolEnemy.gameObject.SetActive(true);
+            ObstaclePool pool = ObstaclePool.Instance;
+            if (pool == null)
+            {
+                Debug.LogError("[ObstacleSpawner] ObstaclePool.Instance NULL! Sahneye ObstaclePool ekle/ ilk sahnede baslat");
+
+                return;
+            }
+
+            EnemyController enemy = pool.Get();
+
+            if (enemy == null)
+            {
+                Debug.LogError("[ObstacleSpawner] Pool NULL dondurdu. ObstaclePool icindeki 'Prefabs' dizisine en az 1 prefab ekle ve countLoop > 0 olsun.");
+
+                return;
+            }
+            enemy.transform.position = this.transform.position;
+            enemy.gameObject.SetActive(true);
         }
     }
 }

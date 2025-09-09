@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using OopProject1.Abstracts.Controllers;
+using OopProject1.Pools;
 using UnityEngine;
 
 namespace OopProject1.Controllers
@@ -22,7 +23,8 @@ namespace OopProject1.Controllers
 
         public override void KillGameObject()
         {
-            Destroy(this.gameObject);
+            _currentTime = 0f;
+            ProjectilePool.Instance.Set(this);
         }
     }
 }

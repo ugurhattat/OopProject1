@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public event System.Action<int> OnScoreChanged;
+    public event System.Action OnSceneChanged;
 
     private void Awake()
     {
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartGameAsync()
     {
+        OnSceneChanged?.Invoke();
+
         yield return SceneManager.LoadSceneAsync("Game");
     }
 
@@ -58,6 +61,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ReturnMenuAsync()
     {
+        OnSceneChanged?.Invoke();
+
         yield return SceneManager.LoadSceneAsync("Menu");
     }
 }

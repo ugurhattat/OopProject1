@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5293636033797344926
+--- !u!1 &3484272851556206155
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2503483642177517418}
-  - component: {fileID: 4024839507551450222}
+  - component: {fileID: 8188536455861619452}
+  - component: {fileID: 9021960744079460684}
   m_Layer: 0
-  m_Name: RedDragonPool
+  m_Name: ProjectilePool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2503483642177517418
+--- !u!4 &8188536455861619452
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293636033797344926}
+  m_GameObject: {fileID: 3484272851556206155}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5854943, y: 0.09530917, z: -0.12056136}
+  m_LocalPosition: {x: 0.06360093, y: -0.12090185, z: -0.15935613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4024839507551450222
+--- !u!114 &9021960744079460684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293636033797344926}
+  m_GameObject: {fileID: 3484272851556206155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe05e941738c3140bce811bb21a7146, type: 3}
+  m_Script: {fileID: 11500000, guid: 9831e3766deda6f4db9d3240f5af887d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 6379696446090330367, guid: c069538b5f645d943b1d75a11c980880, type: 3}
-  - {fileID: 6379696446090330367, guid: db22452622e30de4c98d95d05e7bcd42, type: 3}
+  - {fileID: 8922101713479830013, guid: 2e7129b4028fbf14d9e9e6e06ba72293, type: 3}
   countLoop: 5

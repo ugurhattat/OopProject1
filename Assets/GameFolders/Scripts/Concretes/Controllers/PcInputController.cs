@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace OopProject1.Controllers
 {
-    public class PcInputController : MonoBehaviour
+    public class PcInputController
     {
         public bool LeftMouseClickDown => Input.GetMouseButtonDown(0);
         public bool RightMouseClickDown => Input.GetMouseButtonDown(1);

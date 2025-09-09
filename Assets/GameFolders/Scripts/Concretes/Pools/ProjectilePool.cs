@@ -6,13 +6,13 @@ using UnityEngine;
 
 namespace OopProject1.Pools
 {
-    public class RedDragonPool : GenericPool<RedDragonController>
+    public class ProjectilePool : GenericPool<ProjectileController>
     {
-        public static RedDragonPool Instance { get; private set; }
+        public static ProjectilePool Instance { get; private set; }
 
         public override void ResetAllObjects()
         {
-            foreach (RedDragonController child in GetComponentsInChildren<RedDragonController>())
+            foreach (ProjectileController child in GetComponentsInChildren<ProjectileController>())
             {
                 if (!child.gameObject.activeSelf) continue;
 
@@ -34,5 +34,4 @@ namespace OopProject1.Pools
         }
     }
 }
-
 

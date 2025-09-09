@@ -15,6 +15,7 @@ namespace OopProject1.Controllers
         PcInputController _input;
         LaunchProjectile _launchProjectile;
         AudioSource _audioSource;
+        Dead _dead;
         bool _isLeftMouseClicked;
 
         private void Awake()
@@ -23,11 +24,14 @@ namespace OopProject1.Controllers
             _jump = GetComponent<Jump>();
             _launchProjectile = GetComponent<LaunchProjectile>();
             _audioSource = GetComponent<AudioSource>();
+            _dead = GetComponent<Dead>();
             _input = new PcInputController();
         }
 
         private void Update()
         {
+            if (_dead.IsDead) return;
+
             if (_input.LeftMouseClickDown) 
             {
                 _isLeftMouseClicked = true;

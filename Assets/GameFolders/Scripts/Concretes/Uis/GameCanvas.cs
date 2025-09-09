@@ -7,22 +7,57 @@ namespace OopProject1.Uis
 {
     public class GameCanvas : MonoBehaviour
     {
-        [SerializeField] GameObject gameOverPanel;
+        [SerializeField] private GameObject gameOverPanel;
 
-        //private void Awake()
-        //{
-        //    gameOverPanel = transform.GetChild(1).gameObject;
-        //}
+        private Dead _dead;
 
-        private void Start()
+        private void Awake()
         {
-            Dead dead = FindObjectOfType<Dead>();
-            //dead.OnDead += HandleOnDead;
+            if (gameOverPanel == null)
+            {
+                Debug.LogWarning("[GameCanvas] gameOverPanel atanmadi");
+            }
+            else
+            {
+                gameOverPanel.SetActive(false);
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (_dead == null)
+            {
+                _dead = FindFirstObjectByType<Dead>();
+            }
+
+            if (_dead != null)
+            {
+                _dead.OnDead += HandleOnDead;
+            }
+
+            else
+            {
+                Debug.LogWarning("[GameCanvas] Dead bileseni sahnede bulunamadi");
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (_dead != null)
+            {
+                _dead.OnDead -= HandleOnDead;
+            }
         }
 
         private void HandleOnDead()
         {
-            gameOverPanel.SetActive(true);
+            if (gameOverPanel != null)
+            {
+                gameOverPanel.SetActive(true);
+
+                Time.timeScale = 0f;
+            }
+
         }
     }
 }
